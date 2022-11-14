@@ -12,8 +12,23 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_11_14_071324) do
 master
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.time "time"
+    t.string "status"
+    t.integer "price"
+    t.bigint "dragon_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dragon_id"], name: "index_bookings_on_dragon_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "dragons", force: :cascade do |t|
     t.string "name"
@@ -42,5 +57,7 @@ master
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "dragons"
+  add_foreign_key "bookings", "users"
   add_foreign_key "dragons", "users", column: "users_id"
 end
