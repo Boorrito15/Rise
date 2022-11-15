@@ -1,0 +1,22 @@
+.form-rise {
+  width: 400px;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+}
+
+.form-control {
+  background-color: white;
+}
+
+.form-check {
+  display: flex;
+  justify-content: center;
+
+  .form-check-input {
+    margin-right: 5px;
+  }
+}
