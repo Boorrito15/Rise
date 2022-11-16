@@ -20,7 +20,7 @@
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 25px;
   font-weight: bold;
   margin: 0;
 }
@@ -48,7 +48,8 @@
   width: 40px;
 }
 
-.container{
-  width: 400px;
-  text-align: center;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
