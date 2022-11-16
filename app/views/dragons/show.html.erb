@@ -26,7 +26,13 @@
       </div>
       <div class="col" flex-basis: 70% >
         <div class = card-trip>
-          <p> The booking form goes </p>
+          <p> <%= simple_form_for @booking do |f| %>
+            <%= f.input :departure_location %>
+            <%= f.input :arrival_location %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+          <% end %>
+           </p>
         </div>
       </div>
     </div>
