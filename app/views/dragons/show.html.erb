@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col">
         <div class = card-trip>
-          <h1> <%= Dragon.first.name %> </h1>
-          <p> Owner: <%= Dragon.first.user.first_name %> </p>
-          <p> Species: <%= Dragon.first.species %> </p>
-          <p> Speed: <%= Dragon.first.speed %> </p>
-          <p> Armour: <%= Dragon.first.armour %> </p>
-          <p> Fire power: <%= Dragon.first.fire_power %> </p>
+          <h1> <%= @dragon.name %> </h1>
+          <p> Owner: <%= @dragon.user.first_name %> </p>
+          <p> Species: <%= @dragon.species %> </p>
+          <p> Speed: <%= @dragon.speed %> </p>
+          <p> Armour: <%= @dragon.armour %> </p>
+          <p> Fire power: <%= @dragon.fire_power %> </p>
         </div>
       </div>
       <div class="col">
