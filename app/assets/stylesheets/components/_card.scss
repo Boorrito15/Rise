@@ -8,6 +8,11 @@
   flex-direction: column;
 }
 
+.card-trip a {
+  text-decoration: none;
+  color: black;
+}
+
 .card-image > img {
   width: 400px;
   object-fit: cover;
@@ -33,6 +38,7 @@
   align-items: flex-end;
   position: relative;
   flex-grow: 1;
+  text-decoration: none;
 }
 
 .card-trip-infos .card-trip-user {
@@ -40,4 +46,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.container{
+  width: 400px;
+  text-align: center;
 }
