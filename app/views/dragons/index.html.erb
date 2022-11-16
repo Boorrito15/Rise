@@ -1,21 +1,21 @@
 <div class = "container">
   <h1 class="title"> All Dragons </h1>
-  <% @dragons.each do |dragon| %>
-    <div class = "container">
+  <div class="cards">
+    <% @dragons.each do |dragon| %>
       <div class="card-trip">
-      <%= link_to dragon do   %>
-        <div class="card-image">
-          <%= image_tag "dragon_toothless.png" %>
-        </div>
-        <div class="card-trip-infos">
-          <div>
-            <h2> <%= dragon.name %> </h2>
-            <p><%= dragon.species %></p>
+        <%= link_to dragon do   %>
+          <div class="card-image">
+            <%= image_tag "dragon_toothless.png" %>
           </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
-        </div>
-      <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2> <%= dragon.name %> </h2>
+              <p><%= dragon.species %></p>
+            </div>
+            <h2 class="card-trip-pricing">£99.99</h2>
+          </div>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
