@@ -12,7 +12,8 @@
         </div>
       </div>
       <div class="col">
-        <%= image_tag "dragon_toothless.png", style: 'max-height:600px;width:auto;' %>
+        <%= cl_image_tag @dragon.photo.key, width: 600, crop: :fill %>
+        <%# <%= image_tag "dragon_toothless.png", style: 'max-height:600px;width:auto;' %>
       </div>
     </div>
   </div>
