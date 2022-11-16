@@ -3,6 +3,7 @@
   <% @dragons.each do |dragon| %>
     <div class = "container">
       <div class="card-trip">
+      <%= link_to dragon do   %>
         <div class="card-image">
           <%= image_tag "dragon_toothless.png" %>
         </div>
@@ -14,6 +15,7 @@
           <h2 class="card-trip-pricing">£99.99</h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
+      <% end %>
       </div>
     </div>
   <% end %>
