@@ -1,9 +1,14 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "🐉 Rise", "#", class: "navbar-brand logo" %>
-    <%= link_to new_dragon_path, class: "button" do %>
-      Create a dragon <i class="fa-solid fa-dragon"></i>
-    <% end %>
+<div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="Find your dragon">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,7 +22,6 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
@@ -25,6 +29,11 @@
             </div>
           </li>
         <% else %>
+          <li class="nav-item me-3">
+            <%= link_to new_dragon_path, class: "button" do %>
+              Create a dragon <i class="fa-solid fa-dragon"></i>
+            <% end %>
+          </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
