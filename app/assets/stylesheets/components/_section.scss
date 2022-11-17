@@ -1,3 +1,12 @@
+.header {
+  background-image: url("landing-page-cover");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+
 .dragon-experience-area {
   background-image: url(dragons-marquee.jpg);
   background-size: cover;

@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class = card-trip>
-          <h1> <%= @dragon.name %> </h1>
+        <div class = "card-trip dragon-info">
+          <h1 class="font"> <%= @dragon.name %> </h1>
           <p> Owner: <%= @dragon.user.first_name %> </p>
           <p> Species: <%= @dragon.species %> </p>
           <p> Speed: <%= @dragon.speed %> </p>
@@ -12,7 +12,8 @@
         </div>
       </div>
       <div class="col">
-        <%= image_tag "dragon_toothless.png", style: 'max-height:600px;width:auto;' %>
+        <%= cl_image_tag @dragon.photo.key, width: 600, crop: :fill %>
+        <%# <%= image_tag "dragon_toothless.png", style: 'max-height:600px;width:auto;' %>
       </div>
     </div>
   </div>
@@ -21,16 +22,11 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <p class = text-start> <%= Dragon.first.description %> </p>
+        <p class = text-start> <%= @dragon.description %> </p>
       </div>
       <div class="col" flex-basis: 70% >
         <div class = card-trip>
-          <h1> <%= Dragon.first.name %> </h1>
-          <p> Owner: <%= Dragon.first.user.first_name %> </p>
-          <p> Species: <%= Dragon.first.species %> </p>
-          <p> Speed: <%= Dragon.first.speed %> </p>
-          <p> Armour: <%= Dragon.first.armour %> </p>
-          <p> Fire power: <%= Dragon.first.fire_power %> </p>
+          <p> The booking form goes </p>
         </div>
       </div>
     </div>
