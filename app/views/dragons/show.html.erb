@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class = card-trip>
-          <h1> <%= @dragon.name %> </h1>
+        <div class = "card-trip dragon-info">
+          <h1 class="font"> <%= @dragon.name %> </h1>
           <p> Owner: <%= @dragon.user.first_name %> </p>
           <p> Species: <%= @dragon.species %> </p>
           <p> Speed: <%= @dragon.speed %> </p>
@@ -26,6 +26,7 @@
       </div>
       <div class="col" flex-basis: 70% >
         <div class = card-trip>
+<<<<<<< HEAD
           <p> <%= simple_form_for @booking do |f| %>
             <%= f.input :departure_location %>
             <%= f.input :arrival_location %>
@@ -33,6 +34,9 @@
             <%= f.input :end_date %>
           <% end %>
            </p>
+=======
+          <%= render "bookings/form", booking: @booking, dragon: @dragon %>
+>>>>>>> e454733909b0ff2962472efc7b85e5d51fea42c9
         </div>
       </div>
     </div>

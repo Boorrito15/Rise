@@ -7,6 +7,7 @@ class DragonsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -16,6 +17,7 @@ class DragonsController < ApplicationController
   def create
     @dragon = Dragon.new(dragon_params)
     @dragon.user = current_user
+    @booking.dragon = @dragon
     if @dragon.save
       redirect_to dragon_path(@dragon)
     else

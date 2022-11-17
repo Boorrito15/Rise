@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :dragons, only: [:create, :new, :index, :show, :edit, :update] do
     resources :bookings, only: [:create, :edit, :index, :update, :new, :show]
   end
+
+  resources :bookings, only: [:edit, :index, :update, :show]
 end

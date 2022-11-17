@@ -1,5 +1,5 @@
 <div class = "container">
-  <h1 class="title"> All Dragons </h1>
+  <h1 class="titles"> All Dragons </h1>
   <div class="cards">
     <% @dragons.each do |dragon| %>
       <div class="card-trip">
@@ -12,7 +12,7 @@
               <h2> <%= dragon.name %> </h2>
               <p><%= dragon.species %></p>
             </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
+            <h2 class ="font" class="card-trip-pricing">£99.99</h2>
           </div>
         <% end %>
       </div>
