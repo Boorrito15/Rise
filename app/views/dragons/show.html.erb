@@ -26,13 +26,7 @@
       </div>
       <div class="col" flex-basis: 70% >
         <div class = card-trip>
-          <p> <%= simple_form_for @booking do |f| %>
-            <%= f.input :departure_location %>
-            <%= f.input :arrival_location %>
-            <%= f.input :start_date %>
-            <%= f.input :end_date %>
-          <% end %>
-           </p>
+          <%= render "bookings/form", booking: @booking, dragon: @dragon %>
         </div>
       </div>
     </div>
