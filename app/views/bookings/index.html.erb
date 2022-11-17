@@ -1,1 +1,9 @@
 <h1>  All Bookings </h1>
+
+<h2>My upcoming trips</h2>
+<% @bookings.each do |booking|%>
+  <h3> <%= booking.departure_location %> </h3>
+  <h3> <%= booking.dragon %></h3>
+  <p> <%= booking.dragon.species %></p>
+  <p> host: <%= booking.dragon.user %></p>
+<% end %>
