@@ -6,7 +6,7 @@
       <div class="card-trip">
         <%= link_to dragon do   %>
           <div class="card-image">
-            <%= image_tag "dragon_toothless.png" %>
+            <%= cl_image_tag dragon.photo.key %>
           </div>
           <div class="card-trip-infos">
             <div>
