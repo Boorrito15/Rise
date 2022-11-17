@@ -1,0 +1,15 @@
+<% status:  %>
+
+<% if @booking.status.nil? %>
+  Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been status submitted!
+<% end %>
+<% if @booking.status.true? %>
+  Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been approved!
+<% end %>
+<% if @booking.status.false? %>
+  Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been rejected!
+<% end %>
+
+<div>
+
+</div>
