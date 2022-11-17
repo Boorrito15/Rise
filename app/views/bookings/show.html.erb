@@ -1,7 +1,51 @@
-<% if @booking.status == "pending" %>
-  <p>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been status submitted!</p>
-<% elsif @booking.status == "accepted" %>
-  <p>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been approved!</p>
-<% else %>
-  <p> Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been rejected! </p>
-<% end %>
+<div class = "container">
+  <% if @booking.status == "pending" %>
+    <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been status submitted!</h1>
+  <% elsif @booking.status == "accepted" %>
+    <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been ah1h1roved!</h1>
+  <% else %>
+    <h1> Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been rejected! </h1>
+  <% end %>
+</div>
+<div class = "container d-flex justify-content-center" >
+  <div class="card-trip">
+    <h3> Booking details </h3>
+    <div>
+      <div class="card-image">
+        <%= cl_image_tag @booking.dragon.photo.key %>
+      </div>
+      <div class="card-trip-infos">
+        <div>
+          <h2> <%= @booking.dragon.name %> </h2>
+          <p><%= @booking.dragon.species %></p>
+        </div>
+        <h2 class ="font" class="card-trip-pricing">$<%= @booking.dragon.price %></h2>
+      </div>
+    </div>
+      <div>
+        <p> <%= @booking.departure_location %> </p>
+        <p> <%= @booking.arrival_location %> </p>
+      </div>
+      <div>
+        <p> <%= @booking.start_date %> </p>
+        <p> <%= @booking.end_date %> </p>
+      </div>
+      <div>
+        <p> <%= @booking.status %> </p>
+      </div>
+    <div>
+    </div>
+  </div>
+</div>
+
+
+<%# <div class = "card-trip"> %>
+  <%# <div class="card-image"> %>
+    <%# <%= cl_image_tag @booking.dragon.photo.key %>
+  <%# </div> %>
+  <%# <div class="card-trip-infos"> %>
+    <%# <h1 class="font"> <%= @booking.dragon.name </h1> %>
+    <%# <p> Species: <%= @booking.dragon.species </p> %>
+    <%# <p> Owner: <%= @booking.dragon.user.first_name </p> %>
+  <%# </div>
+</div> %>

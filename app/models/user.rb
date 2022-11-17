@@ -4,11 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # has_many :bookings
-  # has_many :dragons
+  has_many :bookings
+  has_many :dragons
   validates :username, presence: true, uniqueness: true, length: { minimum: 6 }
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
   validates :gender, presence: true
   validates :tribe, presence: true
 end

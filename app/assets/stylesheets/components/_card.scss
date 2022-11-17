@@ -1,7 +1,7 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  height: 500px;
+  height: auto;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,10 @@
   border-radius: 4px;
   box-shadow: 2px 2px 5px rgba(0,0,0,.3);
 }
+
+// .card-trip .booking {
+//   height: fit-content;
+// }
 
 .card-trip a {
   text-decoration: none;
