@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a href="http://localhost:3000">🐉 Rise</a>
+    <a class="firstStyle" href="http://localhost:3000">🐉 Rise</a>
 <div class="wrap">
    <div class="search">
       <input type="text" class="searchTerm" placeholder="Find your dragon...">
@@ -30,9 +30,7 @@
           </li>
         <% else %>
           <li class="nav-item me-3">
-            <%= link_to new_dragon_path, class: "button" do %>
-              Create a dragon <i class="fa-solid fa-dragon"></i>
-            <% end %>
+          <a class="button" href="http://localhost:3000/dragons/new">Create a Dragon<i class="fa-solid fa-dragon"></i></a><a class="firstStyle"
           </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
