@@ -13,29 +13,6 @@
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <div class = "header">
-      <div class = "container">
-        <h1 class = "title" > Who needs a plane when you can have a Dragon </h1>
-        <div class="search-bar">
-          <form>
-            <div>
-              <label>Destination</label>
-              <input type="text" placeholder="Where are you going?">
-            </div>
-            <div>
-              <label>Start</label>
-              <input type="text" placeholder="Add date">
-            </div>
-            <div>
-              <label>Return</label>
-              <input type="text" placeholder="Add date">
-            </div>
-            <div>
-              <button type="submit"><img src="images/search.png" alt=""> </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+    <%= yield %>
   </body>
 </html>
