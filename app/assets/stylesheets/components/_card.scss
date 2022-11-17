@@ -17,7 +17,7 @@
 }
 
 .card-image > img {
-  width: 400px;
+  width: 350px;
   object-fit: cover;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .card-trip p {
-  font-size: 20px;
+  font-size: 25px;
   opacity: .7;
   margin: 0;
   font-family: 'Berkshire Swash', cursive;
@@ -89,4 +89,14 @@
   width: 400px;
   height: 500px;
   padding: 40px;
+}
+
+.dragon-info1{
+  background-image: url("paper.png");
+  // position: centr;
+  width: 600px;
+  height: 900px;
+  padding: 40px;
+  position: center;
+
 }
