@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     @dragon = Dragon.find(params[:dragon_id])
     @booking.dragon = @dragon
     if @booking.save
-      redirect_to dragon_booking_path(@dragon, @booking), notice: "BLA"
+      redirect_to dragon_booking_path(@dragon, @booking), notice: "Your request has been sent!"
     else
       render :new, status: :unprocessable_entity
     end
