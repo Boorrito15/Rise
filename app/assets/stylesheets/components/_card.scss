@@ -15,7 +15,6 @@
 .dragon-booking {
   background-image: linear-gradient(rgba(199, 150, 150, 0.4),rgba(135, 135, 135, 0.4)), url("oldiepaper.jpg");
   position: relative;
-  width: 700px;
   height: 500px;
   padding: 40px;
 }
@@ -31,6 +30,10 @@
 .card-image > img {
   width: 350px;
   object-fit: cover;
+}
+
+.card-image .background {
+  background-image: url("dragons-marquee.jpeg")
 }
 
 .card-image .background-img {
@@ -95,14 +98,18 @@
 }
 
 .dragon-info{
-  background-image: linear-gradient(rgba(199, 150, 150, 0.4),rgba(135, 135, 135, 0.4)), url("map.jpeg");
+  background-image: linear-gradient(rgba(199, 150, 150, 0.4),rgba(135, 135, 135, 0.8)), url("map.jpeg");
   position: relative;
   width: 400px;
   height: 500px;
   padding: 40px;
+
+  p {
+    color: #000;
+  }
 }
 
-.dragon-info1{
+.dragon-info-new{
   background-image: url("paper.png");
   // position: centr;
   width: 600px;

@@ -1,30 +1,58 @@
-<h1 class="font1">  All Bookings </h1>
-  <h2 class="font1">My upcoming trips</h2>
-  <div class = "container">
-  <% @bookings_accepted.each do |booking|%>
-    <%= link_to booking_path(booking.id) do %>
-      <div class = "card-trip">
-        <div class="card-image">
-          <%= cl_image_tag booking.dragon.photo.key %>
-        </div>
-        <div class = "card-trip-infos">
-          <h2> <%= booking.dragon.name %> </h2>
-          <div>
-          <p> host: <%= booking.dragon.user.username %></p>
+<div class = "container" >
+  <h1 class="font2">  My trips </h1>
+
+  <% if @host_request.present? %>
+    <h2 class="font2">My upcoming requests</h2>
+        <% @host_request.each do |booking|%>
+          <%= link_to booking_path(booking.id) do %>
+            <div class = "card-trip">
+              <div class="card-image">
+                <%= cl_image_tag booking.dragon.photo.key %>
+              </div>
+              <div class = "card-trip-infos">
+                <h2> <%= booking.dragon.name %> </h2>
+                <div>
+                <p> host: <%= booking.dragon.user.username %></p>
+                </div>
+                <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
+                <div>
+                <p> <%= booking.start_date %> to <%= booking.end_date %></p>
+                <div>
+                <p> <%= booking.status %></p>
+                </div>
+              </div>
+          <% end %>
+    <% end %>
+
+  <% end %>
+
+
+  <% if @bookings_accepted.present? %>
+    <h2 class="font2">My upcoming trips</h2>
+    <% @bookings_accepted.each do |booking|%>
+      <%= link_to booking_path(booking.id) do %>
+        <div class = "card-trip">
+          <div class="card-image">
+            <%= cl_image_tag booking.dragon.photo.key %>
           </div>
-          <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
-          <div>
-          <p> <%= booking.start_date %> to <%= booking.end_date %></p>
-          <div>
-          <p> <%= booking.status %></p>
+          <div class = "card-trip-infos">
+            <h2> <%= booking.dragon.name %> </h2>
+            <div>
+            <p> host: <%= booking.dragon.user.username %></p>
+            </div>
+            <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
+            <div>
+            <p> <%= booking.start_date %> to <%= booking.end_date %></p>
+            <div>
+            <p> <%= booking.status %></p>
+            </div>
           </div>
-        </div>
+      <% end %>
     <% end %>
   <% end %>
-  </div>
-</div>
-<h2 class="font2">Trips pending confirmation</h2>
-  <div class = "container">
+
+  <% if @bookings_pending.present? %>
+    <h2 class="font2">Trips pending confirmation</h2>
     <% @bookings_pending.each do |booking|%>
       <%= link_to booking_path(booking.id) do %>
         <div class = "card-trip">
@@ -41,40 +69,43 @@
         </div>
       <% end %>
     <% end %>
-  </div>
-  <div class = "container">
-<h2 class="font2">My past trips</h2>
-<% @bookings_past.each do |booking|%>
-  <div class = "class-trip">
-    <div class="card-image">
-      <%= cl_image_tag booking.dragon.photo.key %>
-    </div>
-    <div class = "card-trip-infos">
-      <h2> <%= booking.dragon.name %> </h2>
-      <p> host: <%= booking.dragon.user.username %></p>
-      <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
-      <p> <%= booking.start_date %> to <%= booking.end_date %></p>
-      <p> <%= booking.status %></p>
-    </div>
-  </div>
-<% end %>
-</div>
+  <% end %>
 
-<h2 class="font 2">Cancelled bookings</h2>
-<div class = "container">
-<% @bookings_rejected.each do |booking|%>
-  <div class = "class-trip">
-    <div class="card-image">
-      <%= cl_image_tag booking.dragon.photo.key %>
-    </div>
-      <div class = "card-trip-infos">
-        <h2> <%= booking.dragon.name %> </h2>
-        <p> host: <%= booking.dragon.user.username %></p>
-        <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
-        <p> <%= booking.start_date %> to <%= booking.end_date %></p>
-        <p> <%= booking.status %></p>
+
+  <% if @bookings_past.present? %>
+    <h2 class="font2">My past trips</h2>
+    <% @bookings_past.each do |booking|%>
+      <div class = "class-trip">
+        <div class="card-image">
+          <%= cl_image_tag booking.dragon.photo.key %>
+        </div>
+        <div class = "card-trip-infos">
+          <h2> <%= booking.dragon.name %> </h2>
+          <p> host: <%= booking.dragon.user.username %></p>
+          <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
+          <p> <%= booking.start_date %> to <%= booking.end_date %></p>
+          <p> <%= booking.status %></p>
+        </div>
       </div>
-    </div>
-  </div>
-<% end %>
+    <% end %>
+  <% end %>
+
+  <% if @bookings_rejected.present? %>
+    <h2 class="font2">Cancelled bookings</h2>
+    <% @bookings_rejected.each do |booking|%>
+      <div class = "class-trip">
+        <div class="card-image">
+          <%= cl_image_tag booking.dragon.photo.key %>
+        </div>
+          <div class = "card-trip-infos">
+            <h2> <%= booking.dragon.name %> </h2>
+            <p> host: <%= booking.dragon.user.username %></p>
+            <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
+            <p> <%= booking.start_date %> to <%= booking.end_date %></p>
+            <p> <%= booking.status %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
