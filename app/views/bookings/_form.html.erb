@@ -3,5 +3,7 @@
   <%= f.input :end_date %>
   <%= f.input :departure_location %>
   <%= f.input :arrival_location %>
+  <% if booking.user == current_user %>
+    <%= link_to  %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
