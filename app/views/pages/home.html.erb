@@ -3,8 +3,8 @@
     <div class="search-bar">
       <form>
         <div>
-          <label>Destination</label>
-          <input type="text" placeholder="Where are you going?">
+          <label> Find your dragon here...</label>
+          <%# <input type="text" placeholder="Where are you going?">
         </div>
         <div>
           <label>Start</label>
@@ -12,10 +12,12 @@
         </div>
         <div>
           <label>Return</label>
-          <input type="text" placeholder="Add date">
+          <input type="text" placeholder="Add date"> %>
         </div>
         <div>
-          <button type="submit">Search</button>
+         <%= link_to dragons_path, class:"button" do %>
+             Dragons <i class="fa-solid fa-dragon"></i>
+            <% end %>
         </div>
       </form>
     </div>

@@ -9,8 +9,16 @@
   padding: 35px;
   border-radius: 4px;
   box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+
 }
 
+.dragon-booking {
+  background-image: linear-gradient(rgba(199, 150, 150, 0.4),rgba(135, 135, 135, 0.4)), url("oldiepaper.jpg");
+  position: relative;
+  width: 700px;
+  height: 500px;
+  padding: 40px;
+}
 // .card-trip .booking {
 //   height: fit-content;
 // }
@@ -103,4 +111,22 @@
   padding: 40px;
   position: center;
 
+}
+.btn-primary{
+  background-color: rgba(165, 42, 42, 0.679);
+  text-decoration: none;
+  color: black;
+  border: none;
+  padding: 13px 15px;
+  font-size: 16px;
+  justify-content: center;
+  font-family: 'Berkshire Swash', cursive;
+  border-radius: 50px;
+  margin: auto;
+}
+
+.form-submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

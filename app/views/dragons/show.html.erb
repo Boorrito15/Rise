@@ -18,16 +18,17 @@
     </div>
   </div>
 </section>
-
   <div class="container">
+   <div>
     <div class="row">
       <div class="col">
         <p class = text-start> <%= @dragon.description %> </p>
       </div>
       <div class="col" flex-basis: 70% >
-        <div class = card-trip>
+        <div class ="dragon-booking" >
           <%= render "bookings/form", booking: @booking, dragon: @dragon %>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -1,16 +1,18 @@
 .search-bar {
   background-color: white;
-  width: fit-content;
   // height: fit-content;
   // margin: 30% auto;
   padding: 6px 10px 6px 30px;
   border-radius: 50px;
+    width: 25%;
+    text-align: center;
 }
 
 .search-bar form{
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .search-bar input {
