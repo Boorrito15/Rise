@@ -1,13 +1,13 @@
 <div class = "container">
   <% if @booking.status == "pending" %>
     <% if current_user == @booking.user %>
-      <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been status submitted!</h1>
+      <h1 class="font2">Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been status submitted!</h1>
     <% elsif current_user == @booking.dragon.user %>
-      <h1> <%= @booking.user.username %> has requested to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %></h1>
+      <h1 class="font2"> <%= @booking.user.username %> has requested to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %></h1>
     <% end %>
   <% elsif @booking.status == "accepted" %>
     <% if current_user == @booking.user %>
-      <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been accepted!</h1>
+      <h1 class="font2">Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been accepted!</h1>
     <% elsif current_user == @booking.dragon.user %>
       <h1> <%= @booking.user.username %> will ride <%= @booking.dragon.name %> to <%= @booking.arrival_location %> from <%= @booking.start_date %> to <%= @booking.end_date %></h1>
     <% end %>
@@ -19,34 +19,48 @@
     <% end %>
   <% end %>
 </div>
-<div class = "container d-flex justify-content-center" >
+<div class = "container d-flex justify-content-center">
   <div class="card-trip">
-    <h3> Booking details </h3>
+    <h3 class="font2"> Booking details </h3>
     <div>
       <div class="card-image">
         <%= cl_image_tag @booking.dragon.photo.key %>
       </div>
       <div class="card-trip-infos">
         <div>
-          <h2> <%= @booking.dragon.name %> </h2>
+          <h2><%= @booking.dragon.name %></h2>
           <p><%= @booking.dragon.species %></p>
         </div>
-        <h2 class ="font" class="card-trip-pricing">$<%= @booking.dragon.price %></h2>
-      </div>
+        <div>
+          <h2 class="font card-trip-pricing">$<%= @booking.dragon.price %></h2>
+        </div>
     </div>
-      <div>
-        <p> <%= @booking.departure_location %> </p>
-        <p> <%= @booking.arrival_location %> </p>
+    <div>
+      <div class="booking-info-location mt-3">
+        <div>
+          <p> <%= @booking.departure_location %> </p>
+        </div>
+        <div>
+          <%= image_tag "flyingdragon.jpg", width:"70px"  %>
+        </div>
+        <div>
+          <p> <%= @booking.arrival_location %> </p>
+        </div>
       </div>
       <div>
-        <p> <%= @booking.start_date %> </p>
-        <p> <%= @booking.end_date %> </p>
+        <div class="booking-info-date mt-3">
+          <p> <%= @booking.start_date.strftime('%d %B %Y')%> </p>
+        </div>
+        <div class="booking-info-date mt-3">
+          <p> <%= @booking.end_date.strftime('%d %B %Y') %> </p>
+        </div>
       </div>
-      <div>
+      <div class="booking-info-status d-flex justify-content-center mt-4">
         <p> <%= @booking.status %> </p>
       </div>
       <%# Approve/Reject Buttons %>
-      <div>
+      </div>
+      <div class="cancel-button d-flex justify-content-center mt-3">
         <% if @booking.user == current_user && @booking.status = "pending" %>
           <%= button_to "Cancel", booking_path(@booking, status: "declined"), class:"btn btn-primary btn-sm text-light", method: :patch %>
             &nbsp;
@@ -64,7 +78,6 @@
           <% end %>
         <% end %>
       </div>
-
     </div>
   </div>
 </div>
