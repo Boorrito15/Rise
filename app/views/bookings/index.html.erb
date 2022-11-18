@@ -1,10 +1,33 @@
-<div class = "container">
-  <h1 class="font1">  All Bookings </h1>
-  <div class="form-rise1" >
-    <h2 class="font1">My upcoming trips</h2>
-    <% @bookings_accepted.each do |booking|%>
+<h1 class="font1">  All Bookings </h1>
+  <h2 class="font1">My upcoming trips</h2>
+  <div class = "container">
+  <% @bookings_accepted.each do |booking|%>
+    <%= link_to booking_path(booking.id) do %>
+      <div class = "card-trip">
+        <div class="card-image">
+          <%= cl_image_tag booking.dragon.photo.key %>
+        </div>
+        <div class = "card-trip-infos">
+          <h2> <%= booking.dragon.name %> </h2>
+          <div>
+          <p> host: <%= booking.dragon.user.username %></p>
+          </div>
+          <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
+          <div>
+          <p> <%= booking.start_date %> to <%= booking.end_date %></p>
+          <div>
+          <p> <%= booking.status %></p>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+<h2 class="font2">Trips pending confirmation</h2>
+  <div class = "container">
+    <% @bookings_pending.each do |booking|%>
       <%= link_to booking_path(booking.id) do %>
-        <div class = "class-trip">
+        <div class = "card-trip">
           <div class="card-image">
             <%= cl_image_tag booking.dragon.photo.key %>
           </div>
@@ -19,32 +42,31 @@
       <% end %>
     <% end %>
   </div>
-  <h2>Trips pending confirmation</h2>
-    <div class = "container">
-      <% @bookings_pending.each do |booking|%>
-        <%= link_to booking_path(booking.id) do %>
-          <div class = "class-trip">
-            <div class="card-image">
-              <%= cl_image_tag booking.dragon.photo.key %>
-            </div>
-            <div class = "card-trip-infos">
-              <h2> <%= booking.dragon.name %> </h2>
-              <p> host: <%= booking.dragon.user.username %></p>
-              <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
-              <p> <%= booking.start_date %> to <%= booking.end_date %></p>
-              <p> <%= booking.status %></p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
+  <div class = "container">
+<h2 class="font2">My past trips</h2>
+<% @bookings_past.each do |booking|%>
+  <div class = "class-trip">
+    <div class="card-image">
+      <%= cl_image_tag booking.dragon.photo.key %>
     </div>
+    <div class = "card-trip-infos">
+      <h2> <%= booking.dragon.name %> </h2>
+      <p> host: <%= booking.dragon.user.username %></p>
+      <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
+      <p> <%= booking.start_date %> to <%= booking.end_date %></p>
+      <p> <%= booking.status %></p>
+    </div>
+  </div>
+<% end %>
+</div>
 
-  <h2>My past trips</h2>
-  <% @bookings_past.each do |booking|%>
-    <div class = "class-trip">
-      <div class="card-image">
-        <%= cl_image_tag booking.dragon.photo.key %>
-      </div>
+<h2 class="font 2">Cancelled bookings</h2>
+<div class = "container">
+<% @bookings_rejected.each do |booking|%>
+  <div class = "class-trip">
+    <div class="card-image">
+      <%= cl_image_tag booking.dragon.photo.key %>
+    </div>
       <div class = "card-trip-infos">
         <h2> <%= booking.dragon.name %> </h2>
         <p> host: <%= booking.dragon.user.username %></p>
@@ -53,21 +75,6 @@
         <p> <%= booking.status %></p>
       </div>
     </div>
-  <% end %>
-
-  <h2>Cancelled bookings</h2>
-  <% @bookings_rejected.each do |booking|%>
-    <div class = "class-trip">
-      <div class="card-image">
-        <%= cl_image_tag booking.dragon.photo.key %>
-      </div>
-      <div class = "card-trip-infos">
-        <h2> <%= booking.dragon.name %> </h2>
-        <p> host: <%= booking.dragon.user.username %></p>
-        <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
-        <p> <%= booking.start_date %> to <%= booking.end_date %></p>
-        <p> <%= booking.status %></p>
-      </div>
-    </div>
-  <% end %>
+  </div>
+<% end %>
 </div>
