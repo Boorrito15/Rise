@@ -1,10 +1,25 @@
-.button1{
-
-
+.button-primary {
+  background-color: rgba(165, 42, 42, 0.679);
+  text-decoration: none;
+  border: none;
+  padding: 13px 15px;
+  font-size: 16px;
+  justify-content: center;
+  font-family: 'Berkshire Swash', cursive;
+  border-radius: 50px;
+  margin: auto;
+  color: white;
 }
 
-.button2{
-
-
-
+.button-secondary {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: rgba(165, 42, 42, 0.679);
+  border: none;
+  padding: 13px 15px;
+  font-size: 16px;
+  justify-content: center;
+  font-family: 'Berkshire Swash', cursive;
+  border-radius: 50px;
+  margin: auto;
 }
