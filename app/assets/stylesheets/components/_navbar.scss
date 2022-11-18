@@ -18,14 +18,15 @@
 }
 
 .button {
-  background-color: rgba(165, 42, 42, 0.679);
+  background-color: rgba(165, 42, 42, 1);
   text-decoration: none;
   color: black;
   border: none;
-  padding: 13px 15px;
+  padding: 16px 15px;
   display: inline-block;
   font-size: 16px;
   justify-content: left;
   font-family: 'Berkshire Swash', cursive;
   border-radius: 50px;
+  color: white,
 }
