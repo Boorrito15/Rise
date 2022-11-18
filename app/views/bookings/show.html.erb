@@ -3,19 +3,19 @@
     <% if current_user == @booking.user %>
       <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been status submitted!</h1>
     <% elsif current_user == @booking.dragon.user %>
-      <h1> <%= @booking.user %> has requested to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %></h1>
+      <h1> <%= @booking.user.username %> has requested to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %></h1>
     <% end %>
   <% elsif @booking.status == "accepted" %>
     <% if current_user == @booking.user %>
       <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been accepted!</h1>
     <% elsif current_user == @booking.dragon.user %>
-      <h1> <%= @booking.user %> will ride <%= @booking.dragon.name %> to <%= @booking.arrival_location %> from <%= @booking.start_date %> to <%= @booking.end_date %></h1>
+      <h1> <%= @booking.user.username %> will ride <%= @booking.dragon.name %> to <%= @booking.arrival_location %> from <%= @booking.start_date %> to <%= @booking.end_date %></h1>
     <% end %>
   <% else %>
     <% if current_user == @booking.user %>
       <h1> Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been rejected! </h1>
     <% elsif current_user == @booking.dragon.user %>
-      <h1> You have declined <%= @booking.user%>'s to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> </h1>
+      <h1> You have declined <%= @booking.user.username%>'s to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> </h1>
     <% end %>
   <% end %>
 </div>
@@ -45,11 +45,11 @@
       <div>
         <p> <%= @booking.status %> </p>
       </div>
+      <%# Approve/Reject Buttons %>
       <div>
-        <% if @booking.user == @booking.dragon.user && @booking.status = "pending" %>
-          <%= link_to booking_path(@booking), class:"btn btn-danger btn-sm text-light", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } do %>
-            <i class="bi fa-xl bi-trash"></i>
-          <% end %>
+        <% if @booking.user == current_user && @booking.status = "pending" %>
+          <%= button_to "Cancel", booking_path(@booking, status: "declined"), class:"btn btn-primary btn-sm text-light", method: :patch %>
+            &nbsp;
         <% else %>
           <% if @booking.status == "pending" %>
             <%= button_to "Approve", booking_path(@booking, status: "approved"), class:"btn btn-primary btn-sm text-light", method: :patch %>
@@ -64,6 +64,7 @@
           <% end %>
         <% end %>
       </div>
+
     </div>
   </div>
 </div>
