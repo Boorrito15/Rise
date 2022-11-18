@@ -51,7 +51,7 @@
 
 .card-trip .card-trip-infos {
   padding: 16px;
-  display: flex;
+  // display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
@@ -115,7 +115,6 @@
 .btn-primary{
   background-color: rgba(165, 42, 42, 0.679);
   text-decoration: none;
-  color: black;
   border: none;
   padding: 13px 15px;
   font-size: 16px;
@@ -123,7 +122,7 @@
   font-family: 'Berkshire Swash', cursive;
   border-radius: 50px;
   margin: auto;
-color: white;
+  color: white;
 }
 
 .form-submit-button {
