@@ -46,10 +46,24 @@
         <p> <%= @booking.status %> </p>
       </div>
       <div>
-        <% if @booking.user == @booking.dragon.user %>
-          <%= link_to ,  %>
+        <% if @booking.user == @booking.dragon.user && @booking.status = "pending" %>
+          <%= link_to booking_path(@booking), class:"btn btn-danger btn-sm text-light", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } do %>
+            <i class="bi fa-xl bi-trash"></i>
+          <% end %>
+        <% else %>
+          <% if @booking.status == "pending" %>
+            <%= button_to "Approve", booking_path(@booking, status: "approved"), class:"btn btn-primary btn-sm text-light", method: :patch %>
+            &nbsp;
+            <%= button_to "Decline", booking_path(@booking, status: "declined"), class:"btn btn-danger btn-sm text-light", method: :patch %>
+          <% else %>
+            <% if @booking.status == "rejected" %>
+              <span class="text-danger"><%= @booking.status.capitalize %></span>
+            <% else %>
+              <span class="text-success"><%= @booking.status.capitalize %></span>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
-    <div>
     </div>
   </div>
 </div>

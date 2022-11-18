@@ -5,10 +5,11 @@
 # #
 # #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 # #   Character.create(name: "Luke", movie: movies.first)
-Dragon.destroy_all
 User.destroy_all
+Dragon.destroy_all
 
-user = User.create!(email: "aldenwahsono15@icloud.com", password: "123123", first_name: "Alden", last_name: "Wahsono", username: "Boorito15", tribe: "Hooligan", gender: "Male" )
+user = User.create!(email: "tyganbrooks@gmail.com", password: "123123", first_name: "Tyg", last_name: "Brooks", username: "Dragonlover44", tribe: "Hooligan", gender: "Male" )
+
 dragon = Dragon.new(name: "Toothless", species: "Night Fury", rating: 5, speed: 10, fire_power: 10, armour: 7, user: user, price: 2000, description: "Once thought of as the “unholy offspring of lightning and death itself,” Toothless (20 in dragon years) has proven to be much more of a giant, winged pussycat than the stuff of nightmares.
 
 Playful, inquisitive, and intelligent, Toothless is more Hiccup’s best friend than his pet. He is extremely protective of his Viking soul mate, and will stop at nothing to guard him from all harm. As the last known specimen of the Night Fury species, Toothless is indisputably special. He commands respect from dragons and humans alike.")
@@ -43,3 +44,5 @@ Due to their two decades of experience together, Cloudjumper and Valka share a w
 pic = File.open(Rails.root.join("app/assets/images/dragon_cloudjumper.png"))
 dragon.photo.attach(io: pic, filename: "cloudjumper.png", content_type: "image/png")
 dragon.save!
+
+user = User.create!(email: "aldenwahsono15@icloud.com", password: "123123", first_name: "Alden", last_name: "Wahsono", username: "Boorito15", tribe: "Hooligan", gender: "Male" )
