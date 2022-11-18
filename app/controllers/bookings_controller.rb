@@ -33,11 +33,10 @@ class BookingsController < ApplicationController
   end
 
   def update
-    if @booking.update(booking_params)
-      redirect_to booking_path(@booking)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    status = params[:status]
+    @booking.status = status
+    @booking.save
+    redirect_to bookings_path
   end
 
   private
