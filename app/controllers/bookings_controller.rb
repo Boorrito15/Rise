@@ -2,7 +2,10 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update]
   # before_action :set_dragon, only: [:create]
   def index
-    @bookings = Booking.all
+    @bookings_accepted = current_user.bookings.where("status = 'accepted' AND start_date >= ?", Time.now)
+    @bookings_pending = current_user.bookings.where(status: "pending")
+    @bookings_rejected = current_user.bookings.where(status: "rejected")
+    @bookings_past = current_user.bookings.where("status = 'accepted' AND start_date < ?", Time.now)
   end
 
   def show
@@ -21,6 +24,17 @@ class BookingsController < ApplicationController
     @booking.dragon = @dragon
     if @booking.save
       redirect_to dragon_booking_path(@dragon, @booking), notice: "BLA"
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end

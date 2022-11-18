@@ -1,10 +1,22 @@
 <div class = "container">
   <% if @booking.status == "pending" %>
-    <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been status submitted!</h1>
+    <% if current_user == @booking.user %>
+      <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been status submitted!</h1>
+    <% elsif current_user == @booking.dragon.user %>
+      <h1> <%= @booking.user %> has requested to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %></h1>
+    <% end %>
   <% elsif @booking.status == "accepted" %>
-    <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been ah1h1roved!</h1>
+    <% if current_user == @booking.user %>
+      <h1>Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been accepted!</h1>
+    <% elsif current_user == @booking.dragon.user %>
+      <h1> <%= @booking.user %> will ride <%= @booking.dragon.name %> to <%= @booking.arrival_location %> from <%= @booking.start_date %> to <%= @booking.end_date %></h1>
+    <% end %>
   <% else %>
-    <h1> Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been rejected! </h1>
+    <% if current_user == @booking.user %>
+      <h1> Your request to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> has been rejected! </h1>
+    <% elsif current_user == @booking.dragon.user %>
+      <h1> You have declined <%= @booking.user%>'s to take <%= @booking.dragon.name %> to <%= @booking.arrival_location %> </h1>
+    <% end %>
   <% end %>
 </div>
 <div class = "container d-flex justify-content-center" >
@@ -32,6 +44,10 @@
       </div>
       <div>
         <p> <%= @booking.status %> </p>
+      </div>
+      <div>
+        <% if @booking.user == @booking.dragon.user %>
+          <%= link_to ,  %>
       </div>
     <div>
     </div>
