@@ -67,12 +67,13 @@
     <div class="card-image">
       <%= cl_image_tag booking.dragon.photo.key %>
     </div>
-    <div class = "card-trip-infos">
-      <h2> <%= booking.dragon.name %> </h2>
-      <p> host: <%= booking.dragon.user.username %></p>
-      <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
-      <p> <%= booking.start_date %> to <%= booking.end_date %></p>
-      <p> <%= booking.status %></p>
+      <div class = "card-trip-infos">
+        <h2> <%= booking.dragon.name %> </h2>
+        <p> host: <%= booking.dragon.user.username %></p>
+        <p> <%= booking.departure_location %> to <%= booking.arrival_location %></p>
+        <p> <%= booking.start_date %> to <%= booking.end_date %></p>
+        <p> <%= booking.status %></p>
+      </div>
     </div>
   </div>
 <% end %>

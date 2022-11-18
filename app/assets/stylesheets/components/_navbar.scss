@@ -17,19 +17,45 @@
   font-weight: bold;
 }
 
-.button {
-  background-color: rgba(165, 42, 42, 1);
+.button-primary {
+  background-color: rgba(165, 42, 42, 0.679);
   text-decoration: none;
-  color: black;
   border: none;
-  padding: 16px 15px;
-  display: inline-block;
+  padding: 13px 15px;
   font-size: 16px;
-  justify-content: left;
+  justify-content: center;
   font-family: 'Berkshire Swash', cursive;
   border-radius: 50px;
-  color: white,
+  margin: auto;
+  color: white;
 }
+
+.button-secondary {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: rgba(165, 42, 42, 0.679);
+  border: none;
+  padding: 13px 15px;
+  font-size: 16px;
+  justify-content: center;
+  font-family: 'Berkshire Swash', cursive;
+  border-radius: 50px;
+  margin: auto;
+}
+
+// .button {
+//   background-color: rgba(165, 42, 42, 1);
+//   text-decoration: none;
+//   color: black;
+//   border: none;
+//   padding: 16px 15px;
+//   display: inline-block;
+//   font-size: 16px;
+//   justify-content: left;
+//   font-family: 'Berkshire Swash', cursive;
+//   border-radius: 50px;
+//   color: white,
+// }
 
 .font1{
 
